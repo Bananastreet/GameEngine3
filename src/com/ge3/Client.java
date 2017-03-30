@@ -2,6 +2,8 @@ package com.ge3;
 
 import java.awt.BorderLayout;
 import java.awt.Graphics;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -34,21 +36,16 @@ public class Client extends JComponent {
 	}
 	
 	private void processMainLoop() {
-		new Thread() {
+		TimerTask timerTask = new TimerTask() {
+
 			@Override
 			public void run() {
-				while(true) {
-					processGameLoop();
-					repaint();
-					try {
-						sleep(1);
-					} catch(Exception e) {
-						e.printStackTrace();
-						break;
-					}
-				}
+				processGameLoop();
+				repaint();
 			}
-		}.start();
+		};
+		Timer timer = new Timer(true);
+		timer.scheduleAtFixedRate(timerTask, 0, 1);
 	}
 	
 	private void processGameLoop() {
