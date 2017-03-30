@@ -6,4 +6,6 @@ package com.ge3.entity;
  */
 public class Player {
 
+	private float x;
+	private float y;
 }

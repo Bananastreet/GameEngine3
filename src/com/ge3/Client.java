@@ -21,7 +21,6 @@ public class Client extends JComponent {
 	private JFrame frame;
 	private JPanel panel;
 	
-	
 	protected Client() {
 		frame = new JFrame();
 		panel = new JPanel(new BorderLayout());
@@ -41,7 +40,7 @@ public class Client extends JComponent {
 			@Override
 			public void run() {
 				processGameLoop();
-				repaint();
+				//repaint();
 			}
 		};
 		Timer timer = new Timer(true);
