@@ -5,3 +5,6 @@ Game Engine version 3.0
 - Better
 - Open-Source
 - Easier to use
+
+Contributors
+- tripleys
