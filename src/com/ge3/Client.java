@@ -26,6 +26,7 @@ public class Client extends JComponent {
 		panel = new JPanel(new BorderLayout());
 		panel.add(this);
 		frame.add(panel);
+		frame.setTitle(Constants.TITLE);
 		frame.setSize(Constants.WIDTH, Constants.HEIGHT);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,18 +41,25 @@ public class Client extends JComponent {
 			@Override
 			public void run() {
 				processGameLoop();
-				//repaint();
+				repaint();
 			}
 		};
 		Timer timer = new Timer(true);
 		timer.scheduleAtFixedRate(timerTask, 0, 1);
 	}
 	
+	
 	private void processGameLoop() {
+		x++;
+		if (x == 500)
+			x=0;
 	}
+	
+	int x = 0;
 	
 	@Override
 	public void paintComponent(Graphics g) {
+		g.drawString("test", x, 100);
 	}
 	
 	public JFrame getFrame() {
