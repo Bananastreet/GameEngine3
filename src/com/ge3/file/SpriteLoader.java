@@ -17,7 +17,7 @@ public class SpriteLoader {
 	public static final String ROOT_PATH = "/cache/sprites/";
 
 	/**
-	 * Loads an {@link Image} from {@link #ROOT_PATH}
+	 * Loads an {@link Image} from {@link #ROOT_PATH}.
 	 * 
 	 * @param name
 	 * @return {@link Image}

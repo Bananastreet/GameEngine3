@@ -38,7 +38,7 @@ public class Sprite {
 	}
 	
 	/**
-	 * Draws the {@link #image}
+	 * Draws the {@link #image}.
 	 * 
 	 * @param g
 	 * @param x

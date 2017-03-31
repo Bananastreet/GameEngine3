@@ -50,16 +50,10 @@ public class Client extends JComponent {
 	
 	
 	private void processGameLoop() {
-		x++;
-		if (x == 500)
-			x=0;
 	}
-	
-	int x = 0;
 	
 	@Override
 	public void paintComponent(Graphics g) {
-		g.drawString("test", x, 100);
 	}
 	
 	public JFrame getFrame() {
