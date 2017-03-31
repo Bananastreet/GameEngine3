@@ -31,4 +31,12 @@ public class SpriteLoader {
 		}
 		return null;
 	}
+	
+	public static Image[] load(String index, int count) {
+		Image[] img = new Image[count];
+		for(int i = 0; i < count; i++) {
+			img[i] = load(index + "/" + i);
+		}
+		return img;
+	}
 }
