@@ -4,8 +4,10 @@ package com.ge3.entity;
  * 
  * @author Akseli
  */
-public class Player {
+public class Player extends Entity {
 
-	private float x;
-	private float y;
+	public Player(int absX, int absY) {
+		super(absX, absY);
+	}
+
 }
