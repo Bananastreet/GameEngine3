@@ -1,5 +1,7 @@
 package com.ge3.content;
 
+import java.awt.Graphics;
+
 /**
  * Class for managing scenes
  * 
@@ -23,6 +25,7 @@ public class SceneManager {
 	 */
 	public SceneManager() {
 		currentScene = Scenes.getScene(currentSceneID = 0);
+		currentScene.init();
 	}
 	
 	/**
@@ -31,6 +34,7 @@ public class SceneManager {
 	public void next() {
 		if (currentSceneID < Scenes.amount() - 1)
 			set(currentSceneID++);
+		currentScene.init();
 	}
 	
 	/**
@@ -39,6 +43,7 @@ public class SceneManager {
 	public void previous() {
 		if (currentSceneID > 0)
 			set(currentSceneID--);
+		currentScene.init();
 	}
 	
 	/**
@@ -49,6 +54,16 @@ public class SceneManager {
 	 */
 	public void set(int id) {
 		currentScene = Scenes.getScene(currentSceneID = id);
+		currentScene.init();
+	}
+	
+	/**
+	 * Draws the {@linkplain #currentScene}
+	 * 
+	 * @param g {@linkplain Graphics}
+	 */
+	public void drawCurrentScene(Graphics g) {
+		currentScene.draw(g);
 	}
 	
 	/**

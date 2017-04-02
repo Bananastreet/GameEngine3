@@ -9,6 +9,8 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import com.ge3.content.SceneManager;
+
 
 /**
  * 
@@ -20,6 +22,7 @@ public class Client extends JComponent {
 	
 	private JFrame frame;
 	private JPanel panel;
+	private SceneManager sceneManager;
 	
 	protected Client() {
 		frame = new JFrame();
@@ -32,6 +35,7 @@ public class Client extends JComponent {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+		sceneManager = new SceneManager();
 		processMainLoop();
 	}
 	
@@ -54,6 +58,7 @@ public class Client extends JComponent {
 	
 	@Override
 	public void paintComponent(Graphics g) {
+		sceneManager.drawCurrentScene(g);
 	}
 	
 	public JFrame getFrame() {
