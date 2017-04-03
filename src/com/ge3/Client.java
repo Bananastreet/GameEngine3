@@ -29,8 +29,10 @@ public class Client extends JComponent {
 		panel = new JPanel(new BorderLayout());
 		panel.add(this);
 		frame.add(panel);
+		frame.pack();
+		frame.getContentPane().setPreferredSize(Constants.getDimension(frame.getInsets()));
+		frame.pack();
 		frame.setTitle(Constants.TITLE);
-		frame.setSize(Constants.WIDTH, Constants.HEIGHT);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
